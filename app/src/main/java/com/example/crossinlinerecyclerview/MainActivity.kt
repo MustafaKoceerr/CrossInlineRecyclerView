@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recylerView)
         recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
         val list = listOf("1", "2", "3", "4")
+        /**
+         * Kodu decompile edersek fonksiyonun nesnesinin oluşturulduğunu, inline yapmamıza rağmen görebiliriz.
+         * Tam doğru kullanımı bu değil ama örnek olması açısından crossinline'ı böyle yaptık.
+         *
+         */
         recyclerView.adapter = ListAdapter(list, { textView ->
             Toast.makeText(this@MainActivity, "Tiklandi", Toast.LENGTH_SHORT).show()
             val text = textView.text.toString()
